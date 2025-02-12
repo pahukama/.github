@@ -1,3 +1,8 @@
+---
+name: Report a Bug
+about: Report bugs here.
+---
+
 ## Expected Behavior
 
 

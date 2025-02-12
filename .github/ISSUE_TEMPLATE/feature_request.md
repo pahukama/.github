@@ -1,3 +1,8 @@
+---
+name: Feature/Task Request
+about: Create issues for new feature/task here.
+---
+
 ## User Story
 
 Briefly describe the feature being introduced.
