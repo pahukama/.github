@@ -1,25 +1,28 @@
-<!-- Please make sure you have read CONTRIBUTING.md for developer guidelines on how to fill this out
--->
+## What kind of change does this PR introduce? (New feature, Minor Bug fix, Refactoring, Hotfix, UI/UX improvement)
 
-## Describe your changes
 
-## Changelog
+## What is the current behavior? (You can also link to an open issue here)
 
-<!-- Uncomment relevent PR items and complete.
 
-## ~~Issue ticket number and link~~
 
-## ~~Github Issue Ticket(s)~~
+## What is the new behavior (if this is a feature change)?**
 
-## ~~Related Pull Requests~~
 
-## ~~Screenshots~~
--->
 
-<!-- Remove `~~` from relevant checklist items.
+## What testing have you performed to ensure that these changes function as intended? (include information about any added tests)?
+
+
+
+## Does this PR introduce a breaking change? (What changes might users need to make in their application due to this PR?)
+
+
+
+* **Other information**:<!-- Remove `~~` from relevant checklist items.
 -->
 ## Checklist before requesting a review
+ **Please check if the PR fulfills these requirements**
+- [ ] Provide a succinct and descriptive title for the pull request, e.g., "Improve caching mechanism for API calls" **OR** git commit message following our guidelines.
+- [ ] ~~Docs have been added / updated (for bug fixes / features)~~
 - [ ] ~~I have performed a self-review of my code~~
 - [ ] ~~If it is a core feature, I have added thorough tests.~~
 - [ ] ~~Do we need to implement analytics?~~
-- [ ] ~~Will this be part of a product update? If yes, please write one phrase about this update.~~
