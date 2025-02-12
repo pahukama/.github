@@ -1,6 +1,6 @@
 ---
-name: Feature/Task Request
-about: Create issues for new feature/task here.
+name: New Feature/Task
+about: Create a new issue for a feature or task.
 ---
 
 ## User Story
