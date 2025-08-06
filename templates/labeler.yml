@@ -28,7 +28,7 @@ documentation:
 
 # Add 'enhancement' label
 enhancement:
- - head-branch: ['feature']
+ - head-branch: ['feature','new']
 
 # Add 'task' label
 task:
