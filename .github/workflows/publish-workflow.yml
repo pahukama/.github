@@ -20,7 +20,6 @@ jobs:
         with:
           repository: ${{ github.repository_owner }}/${{ matrix.target_repo }}
           path: ${{ matrix.target_repo }}
-          token: ${{ secrets.RW_REPO}}
           ref: main
           
       - name: Update workflows
