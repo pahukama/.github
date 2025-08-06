@@ -12,7 +12,7 @@ jobs:
     
     steps:
       - name: create feature pr
-        uses: vsoch/pull-request-action@v1
+        uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "feature"
@@ -21,7 +21,7 @@ jobs:
           PASS_IF_EXISTS: true
           
       - name: create fix pr
-        uses: vsoch/pull-request-action@v1
+        uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "fix"
@@ -30,7 +30,7 @@ jobs:
           PASS_IF_EXISTS: true
           
       - name: create task pr
-        uses: vsoch/pull-request-action@v1
+        uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "task"
@@ -39,7 +39,7 @@ jobs:
           PASS_IF_EXISTS: true
 
       - name: create refactor pr
-        uses: vsoch/pull-request-action@v1
+        uses: vsoch/pull-request-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "refactor"
