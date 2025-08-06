@@ -3,6 +3,9 @@
     "description": "Auto labels pull requests.",
     "iconName": "octicon id-badge",
     "filePatterns": [
-        "*",
+        "package.json$",
+        "dune$",
+        "^Dockerfile",
+        ".*\\.md$"
     ]
 }
