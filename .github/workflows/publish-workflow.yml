@@ -30,6 +30,9 @@ jobs:
         run: |
           mkdir -p .github/workflows/
           cp ../workflow-templates/* .github/workflows/
+          cp ../workflow-templates/labeler.yml .github/
+          rm .github/workflows/auto-labeler.yml
+          rm .github/workflows/labeler.yml
         working-directory: ./${{ matrix.target_repo }}
         
       - name: Publish workflows
