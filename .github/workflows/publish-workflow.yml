@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Workflows
         uses: actions/checkout@v4
         with:
-          presist-credentials: false
+          persist-credentials: false
 
                 
       - name: Git PAT 
