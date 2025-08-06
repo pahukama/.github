@@ -1,7 +1,9 @@
 name: Pull Request on Branch Push
 
 on:
-  - push
+  push:
+    branches-ignore:
+      - main
       
 jobs:
   auto-pull-request:
@@ -10,7 +12,7 @@ jobs:
     
     steps:
       - name: create feature pr
-        uses: vsoch/pull-request-action@v1.1.1
+        uses: vsoch/pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "feature"
@@ -19,7 +21,7 @@ jobs:
           PASS_IF_EXISTS: true
           
       - name: create fix pr
-        uses: vsoch/pull-request-action@v1.1.1
+        uses: vsoch/pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "fix"
@@ -28,7 +30,7 @@ jobs:
           PASS_IF_EXISTS: true
           
       - name: create task pr
-        uses: vsoch/pull-request-action@v1.1.1
+        uses: vsoch/pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "task"
@@ -37,7 +39,7 @@ jobs:
           PASS_IF_EXISTS: true
 
       - name: create refactor pr
-        uses: vsoch/pull-request-action@v1.1.1
+        uses: vsoch/pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_PREFIX: "refactor"
