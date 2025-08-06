@@ -9,7 +9,7 @@ dependency update:
 # Add 'frontend' label to any change to .md files within the entire repository 
 frontend:
 - changed-files:
-  - any-glob-to-any-file: ['apps/*','app/*]
+  - any-glob-to-any-file: ['apps/*','app/*,**/*.css]
 
 # Add 'backend' label to any change to .md files within the entire repository 
 backend:
