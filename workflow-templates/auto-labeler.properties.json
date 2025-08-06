@@ -1,0 +1,11 @@
+{
+    "name": "Pahukama Auto-Labeler",
+    "description": "Auto labels pull requests.",
+    "iconName": "octicon note",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "*",
+    ]
+}
