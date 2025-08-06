@@ -44,4 +44,4 @@ refactor:
 
 # Add 'security' label
 security:
- - head-branch: ['security','secure','auth]
+ - head-branch: ['security','secure','auth']
