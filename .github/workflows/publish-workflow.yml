@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target_repo: [ 'pahukama-webos' , 'pahukama-serverless' ]
+        target_repo: [ 'pahukama-webos' , 'pahukama-dashboard' ]
     steps:
       - name: Checkout Workflows
         uses: actions/checkout@v4
