@@ -1,0 +1,42 @@
+# Add 'Documentation' label to any change to .md files within the entire repository 
+dependency update:
+- changed-files:
+  - any-glob-to-any-file: '**/dune'
+  - any-glob-to-any-file: '**/dune-project'
+  - any-glob-to-any-file: '**/package.json'
+  - any-glob-to-any-file: 'deployment/*'
+
+# Add 'Documentation' label to any change to .md files within the entire repository 
+infrastructure update:
+- changed-files:
+  - any-glob-to-any-file: 'deployment/*'
+  - any-glob-to-any-file: 'configs/*'
+
+# Add 'Documentation' label to any change to .md files within the entire repository 
+documentation:
+- changed-files:
+  - any-glob-to-any-file: '**/*.md'
+
+# Add 'enhancement' label
+enhancement:
+ - head-branch: ['feature']
+
+# Add 'task' label
+task:
+ - head-branch: ['task']
+
+# Add 'bug' label
+bug:
+ - head-branch: ['bug',]
+
+# Add 'fix' label
+fix:
+ - head-branch: ['fix']
+ 
+# Add 'refactor' label
+refactor:
+ - head-branch: ['refactor']
+
+# Add 'security' label
+security:
+ - head-branch: ['security','secure']
