@@ -9,17 +9,17 @@ dependency update:
 # Add 'frontend' label to any change to .md files within the entire repository 
 frontend:
 - changed-files:
-  - any-glob-to-any-file: ['apps/*','app/*,**/*.css]
+  - any-glob-to-any-file: ['apps/*','app/*','**/*.css']
 
 # Add 'backend' label to any change to .md files within the entire repository 
 backend:
 - changed-files:
-  - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*]
+  - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*']
 
 # Add 'ops' label to any change to .md files within the entire repository 
 ops:
 - changed-files:
-  - any-glob-to-any-file: 'deployment/*','configs/*','certificates']
+  - any-glob-to-any-file: ['deployment/*','configs/*']
 
 # Add 'documentation' label to any change to .md files within the entire repository 
 documentation:
@@ -36,12 +36,12 @@ task:
 
 # Add 'fix' label
 fix:
- - head-branch: ['fix']
+ - head-branch: ['fix','error','bug']
  
 # Add 'refactor' label
 refactor:
- - head-branch: ['refactor']
+ - head-branch: ['refactor','redesign','revert']
 
 # Add 'security' label
 security:
- - head-branch: ['security','secure']
+ - head-branch: ['security','secure','auth]
