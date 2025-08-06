@@ -6,7 +6,7 @@ dependency update:
   - any-glob-to-any-file: '**/package.json'
   - any-glob-to-any-file: 'deployment/*'
 
-# Add 'Documentation' label to any change to .md files within the entire repository 
+# Add 'frontend' label to any change to .md files within the entire repository 
 frontend:
 - changed-files:
   - any-glob-to-any-file: ['apps/*','app/*]
