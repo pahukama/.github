@@ -21,8 +21,9 @@ jobs:
       - name: Checkout target repo
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository_owner }}/${{ matrix.target_repo }}
+          repository: ${{ github.repository_owner }}/${{ matrix.target_repo }}.git
           path: ${{ matrix.target_repo }}
+          token: ${{ secrets.RW_REPO }}
           ref: main
           
       - name: Update workflows
