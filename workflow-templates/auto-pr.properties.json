@@ -2,7 +2,5 @@
     "name": "Pahukama Auto-PR Creation",
     "description": "Auto create new pull requests branch push.",
     "iconName": "octicon git-branch",
-    "filePatterns": [
-        "*",
-    ]
+    "categories": ["automation", "Continuous-integration"]
 }
