@@ -1,0 +1,40 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, and lint the project.
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: PR Sanity Check  # name of the action (displayed in the github interface)
+
+on:  # on all pull requests
+  - pull_request
+    
+jobs:
+  auto-assign:
+    name: Assign PR to Author
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Assign
+        uses: technote-space/assign-author@v1
+
+  auto-label:
+    name: Label PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Label
+        uses: actions/labeler@v5
+          
+  validate-title:
+    name: Validate PR Title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR Title
+        uses: deepakputhraya/action-pr-title@master
+        with:
+          regex: '^(feature|fix|task|refactor|revert|test){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)' # Conventional grouping style commit
+          allowed_prefixes: 'feature,fix,task,refactor,revert,test' # title should start with the given prefix
+          prefix_case_sensitive: false # title prefix are case insensitive
+          min_length: 15 # Min length of the title
+          max_length: 72 # Max length of the title
+          verbal_description: 'PR title must match conventional format, ex. {feature,fix,task,refactor,revert,test}(ISSUE-#): my pull request' # Verbal description of the regex rule
+          github_token: ${{ github.token }} # Default: ${{ github.token }}
