@@ -1,6 +1,0 @@
-{
-    "name": "Pahukama PR Sanity Checks",
-    "description": "Validate pull requests.",
-    "iconName": "octicon check-circle",
-    "categories": ["automation", "Continuous-integration"]
-}
