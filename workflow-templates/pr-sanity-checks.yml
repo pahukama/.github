@@ -7,20 +7,15 @@ on:  # on all pull requests
   - pull_request
     
 jobs:
-  auto-assign:
-    name: Assign PR to Author
+  auto-assign-and-label:
+    name: Attatch Labels and Assign to Author
     runs-on: ubuntu-latest
 
     steps:
-      - name: Assign
+      - name: Assign Author
         uses: technote-space/assign-author@v1
 
-  auto-label:
-    name: Label PR
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Label
+      - name: Attatch Labels
         uses: actions/labeler@v5
           
   validate-title:
