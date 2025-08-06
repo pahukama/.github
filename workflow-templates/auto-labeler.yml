@@ -7,10 +7,14 @@ dependency update:
   - any-glob-to-any-file: 'deployment/*'
 
 # Add 'Documentation' label to any change to .md files within the entire repository 
-infrastructure update:
+backend:
 - changed-files:
-  - any-glob-to-any-file: 'deployment/*'
-  - any-glob-to-any-file: 'configs/*'
+  - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*]
+
+# Add 'Documentation' label to any change to .md files within the entire repository 
+ops:
+- changed-files:
+  - any-glob-to-any-file: 'deployment/*','configs/*','certificates']
 
 # Add 'Documentation' label to any change to .md files within the entire repository 
 documentation:
@@ -24,10 +28,6 @@ enhancement:
 # Add 'task' label
 task:
  - head-branch: ['task']
-
-# Add 'bug' label
-bug:
- - head-branch: ['bug',]
 
 # Add 'fix' label
 fix:
