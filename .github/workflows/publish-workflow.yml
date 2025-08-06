@@ -13,12 +13,10 @@ jobs:
         target_repo: [ 'pahukama-webos' , 'pahukama-serverless' ]
     steps:
       - name: Checkout Workflows
-        uses: actions/checkout@v2
-        with:
-          path: main
+        uses: actions/checkout@v4
           
       - name: Checkout target repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/${{ matrix.target_repo }}
           path: ${{ matrix.target_repo }}
