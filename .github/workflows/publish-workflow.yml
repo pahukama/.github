@@ -3,7 +3,7 @@ on:
  push:
    branches: [ 'main' ]
    paths:
-   - 'workflow-templates/**'
+   - 'templates/**'
    
 jobs:
   publish-workflow-template:
