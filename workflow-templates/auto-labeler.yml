@@ -11,7 +11,7 @@ frontend:
 - changed-files:
   - any-glob-to-any-file: ['apps/*','app/*]
 
-# Add 'Documentation' label to any change to .md files within the entire repository 
+# Add 'backend' label to any change to .md files within the entire repository 
 backend:
 - changed-files:
   - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*]
