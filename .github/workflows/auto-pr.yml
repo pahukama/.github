@@ -1,0 +1,46 @@
+name: Pull Request on Branch Push
+
+on:
+  - push
+      
+jobs:
+  auto-pull-request:
+    name: Create New PR From Branch
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: create feature pr
+        uses: vsoch/pull-request-action@v1.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "feature"
+          PULL_REQUEST_BRANCH: "main"
+          PULL_REQUEST_DRAFT: true
+          PASS_IF_EXISTS: true
+          
+      - name: create fix pr
+        uses: vsoch/pull-request-action@v1.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "fix"
+          PULL_REQUEST_BRANCH: "main"
+          PULL_REQUEST_DRAFT: true
+          PASS_IF_EXISTS: true
+          
+      - name: create task pr
+        uses: vsoch/pull-request-action@v1.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "task"
+          PULL_REQUEST_BRANCH: "main"
+          PULL_REQUEST_DRAFT: true
+          PASS_IF_EXISTS: true
+
+      - name: create refactor pr
+        uses: vsoch/pull-request-action@v1.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_PREFIX: "refactor"
+          PULL_REQUEST_BRANCH: "main"
+          PULL_REQUEST_DRAFT: true
+          PASS_IF_EXISTS: true
