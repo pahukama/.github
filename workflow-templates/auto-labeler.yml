@@ -21,7 +21,7 @@ ops:
 - changed-files:
   - any-glob-to-any-file: 'deployment/*','configs/*','certificates']
 
-# Add 'Documentation' label to any change to .md files within the entire repository 
+# Add 'documentation' label to any change to .md files within the entire repository 
 documentation:
 - changed-files:
   - any-glob-to-any-file: '**/*.md'
