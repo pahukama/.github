@@ -19,7 +19,7 @@ jobs:
 
                 
       - name: Git PAT 
-        run: git config --global url.https://tchibanda24:${{ secrets.RW_REPO }}@github.com/.insteadOf https://github.com/
+        run: git config --global url.https://tchibanda24@github.com/.insteadOf https://github.com/
           
       - name: Checkout target repo
         uses: actions/checkout@v4
