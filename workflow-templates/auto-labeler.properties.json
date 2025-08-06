@@ -1,6 +1,0 @@
-{
-    "name": "Pahukama Auto-Labeler",
-    "description": "Auto labels pull requests.",
-    "iconName": "octicon id-badge",
-    "categories": ["automation", "Continuous-integration"]
-}
