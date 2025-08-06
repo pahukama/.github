@@ -4,7 +4,8 @@
 name: PR Sanity Checks  # name of the action (displayed in the github interface)
 
 on:  # on all pull requests
-  - pull_request
+  pull_request: 
+    types: [opened, edited, synchronize, reopened]
     
 jobs:
   auto-assign-and-label:
