@@ -20,4 +20,4 @@ jobs:
           ref: main
           
       - name: Craete PR
-        run: gh pr create -F ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
+        run: gh pr create -f -F ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
