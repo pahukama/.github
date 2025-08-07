@@ -43,7 +43,7 @@ refactor:
  - head-branch: ['refactor','redesign','redo']
  
 # Add 'refactor' label
-refactor:
+revert:
  - head-branch: ['revert']
  
 # Add 'security' label
