@@ -9,7 +9,6 @@ jobs:
   auto-pull-request:
     name: Create New PR From Branch
     runs-on: ubuntu-latest
-    continue-on-error: true
     
     steps:
       - name: Checkout branch
@@ -24,3 +23,4 @@ jobs:
           
       - name: Create PR
         run: gh pr create --title "${{ github.head_ref }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
+        continue-on-error: true
