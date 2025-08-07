@@ -12,6 +12,9 @@ jobs:
     continue-on-error: true
     
     steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+          
       - name: Fetch PR template
         uses: actions/checkout@v4
         with:
@@ -19,5 +22,5 @@ jobs:
           path: .github-org
           ref: main
           
-      - name: Craete PR
-        run: gh pr create -f -F ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
+      - name: Create PR
+        run: gh pr create --title "${{ github.head_ref }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
