@@ -13,5 +13,5 @@ jobs:
     
     steps:
       - name: create feature pr
-        run: gh pr create -F -T "PULL_REQUEST_TEMPLATE.md"
+        run: gh pr create -F "PULL_REQUEST_TEMPLATE.md"
 
