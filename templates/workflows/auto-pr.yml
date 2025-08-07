@@ -1,7 +1,9 @@
 name: Pull Request on Branch Push
 
 on:
-  - push
+  push:
+    branches:
+      - '*'
       
 jobs:
   auto-pull-request:
