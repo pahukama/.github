@@ -12,6 +12,12 @@ jobs:
     continue-on-error: true
     
     steps:
-      - name: create feature pr
-        run: gh pr create -F "PULL_REQUEST_TEMPLATE.md"
-
+      - name: Fetch PR template
+        uses: actions/checkout@v4
+        with:
+          repository: pahukama/.github
+          path: .github-org
+          ref: main
+          
+      - name: Craete PR
+        run: gh pr create -F ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
