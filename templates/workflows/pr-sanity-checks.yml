@@ -1,7 +1,7 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, and lint the project.
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: PR Sanity Checks  # name of the action (displayed in the github interface)
+name: PR Checks  # name of the action (displayed in the github interface)
 
 on:  # on all pull requests
   pull_request: 
@@ -9,7 +9,9 @@ on:  # on all pull requests
     
 jobs:
   auto-assign-and-label:
+    - name: Auto Assign & Label
     runs-on: ubuntu-latest
+    
     steps:
       - uses: hkusu/review-assign-action@v1
         with:
