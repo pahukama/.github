@@ -10,4 +10,4 @@ jobs:
     
     steps:
       - name: create feature pr
-        run: gh pr create --title ${{ github.head_ref }} --body-file '.github/PULL_REQUEST_TEMPLATE.md'
+        run: gh pr create --title ${{ github.head_ref }} --body-file ".github/PULL_REQUEST_TEMPLATE.md"
