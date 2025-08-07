@@ -1,6 +1,9 @@
 name: Pull Request on Branch Push
 
 on: [ push ]
+
+env:
+  GH_TOKEN: ${{ github.token }}
       
 jobs:
   auto-pull-request:
