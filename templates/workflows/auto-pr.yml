@@ -1,7 +1,7 @@
 # This workflow will automatically create a new pull request when a new branch is pushed and validated
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Validate Branch & Open PR
+name: Auto PR
 
 on: [ push ]
 
@@ -28,7 +28,7 @@ jobs:
           exit 1
               
   create-pull-request:
-    name: Create New PR From Branch
+    name: Create Draft PR
     needs: validate-branch # This causes the step to abort if validation failed
     runs-on: ubuntu-latest
     
