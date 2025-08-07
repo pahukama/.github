@@ -19,7 +19,7 @@ backend:
 # Add 'ops' label to any change to .md files within the entire repository 
 ops:
 - changed-files:
-  - any-glob-to-any-file: ['deployment/*','configs/*','.github/*']
+  - any-glob-to-any-file: ['deployment/*','configs/*','cdk/*','.github/*']
 
 # Add 'documentation' label to any change to .md files within the entire repository 
 documentation:
@@ -32,16 +32,20 @@ enhancement:
 
 # Add 'task' label
 task:
- - head-branch: ['task']
+ - head-branch: ['task','chore']
 
 # Add 'fix' label
 fix:
- - head-branch: ['fix','error','bug']
+ - head-branch: ['fix','error','bug','broken']
  
 # Add 'refactor' label
 refactor:
- - head-branch: ['refactor','redesign','revert']
-
+ - head-branch: ['refactor','redesign','redo']
+ 
+# Add 'refactor' label
+refactor:
+ - head-branch: ['revert']
+ 
 # Add 'security' label
 security:
- - head-branch: ['security','secure','auth']
+ - head-branch: ['security','secure','auth','authentication']
