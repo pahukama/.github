@@ -17,9 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-
+      - uses: actions/checkout@v4
       - name: Add assignee
-        uses: actions/checkout@v4
         run: | # Get the PR number and assign it to the PR author
           PR_NUMBER=${{ github.event.pull_request.number }}
           AUTHOR=${{ github.actor }}
