@@ -16,6 +16,7 @@ jobs:
           PULL_REQUEST_BRANCH: "main"
           PULL_REQUEST_DRAFT: true
           PASS_IF_EXISTS: true
+          PULL_REQUEST_BODY: ""
           
       - name: create fix pr
         uses: vsoch/pull-request-action@master
@@ -25,6 +26,7 @@ jobs:
           PULL_REQUEST_BRANCH: "main"
           PULL_REQUEST_DRAFT: true
           PASS_IF_EXISTS: true
+          PULL_REQUEST_BODY: ""
           
       - name: create task pr
         uses: vsoch/pull-request-action@master
@@ -34,6 +36,7 @@ jobs:
           PULL_REQUEST_BRANCH: "main"
           PULL_REQUEST_DRAFT: true
           PASS_IF_EXISTS: true
+          PULL_REQUEST_BODY: ""
 
       - name: create refactor pr
         uses: vsoch/pull-request-action@master
@@ -43,3 +46,4 @@ jobs:
           PULL_REQUEST_BRANCH: "main"
           PULL_REQUEST_DRAFT: true
           PASS_IF_EXISTS: true
+          PULL_REQUEST_BODY: ""
