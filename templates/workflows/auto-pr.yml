@@ -10,4 +10,4 @@ jobs:
     
     steps:
       - name: create feature pr
-        run: gh pr create --title ${{ github.head_ref }}
+        run: gh pr create --title "${{ github.head_ref }}"
