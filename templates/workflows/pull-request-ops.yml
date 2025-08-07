@@ -18,7 +18,7 @@ jobs:
         run: | # Get the PR number and assign it to the PR author
           PR_NUMBER=${{ github.event.pull_request.number }}
           AUTHOR=${{ github.actor }}
-          gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR 
+          gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR"
           
       - name: Attatch Labels
         uses: actions/labeler@v5
