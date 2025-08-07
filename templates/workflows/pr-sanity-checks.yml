@@ -9,11 +9,12 @@ on:  # on all pull requests
     
 jobs:
   auto-assign-and-label:
-    - name: Auto Assign & Label
+    name: Auto Assign & Label
     runs-on: ubuntu-latest
     
     steps:
-      - uses: hkusu/review-assign-action@v1
+      - name: Assign & Label
+        uses: hkusu/review-assign-action@v1
         with:
           assignees: ${{ github.actor }} # assign pull request author
           reviewers: tchibanda24 # if draft, assigned when draft is released
