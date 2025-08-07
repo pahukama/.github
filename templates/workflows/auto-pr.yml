@@ -11,13 +11,16 @@ env:
       
 jobs:
   validate-branch:
-  name: Validate Branch
+    name: Validate Branch
+    runs-on: ubuntu-latest
+
     steps:
       - name: Validate branch name
-        if: ${{ !startsWith( github.ref_name, 'feature') && !startsWith( github.ref_name, 'fix') && !startsWith( github.ref_name, 'task') && !startsWith( github.ref_name, 'refactor') && !startsWith( github.ref_name, 'revert') }}$
+        if: ${{ startsWith( github.ref_name, 'feature') || startsWith( github.ref_name, 'fix') || startsWith( github.ref_name, 'task') || startsWith( github.ref_name, 'refactor') || startsWith( github.ref_name, 'revert') }}$
         run: |
+          echo github.ref_name
           echo "Invalid branch name, must start with: feature, fix, task, refactor, or revert."
-          exit 1 
+          exit 1
               
   create-pull-request:
     name: Create New PR From Branch
