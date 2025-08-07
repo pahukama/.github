@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v4
           
       - name: Create PR
-        run: gh pr create --title "${{ github.head_ref }}" -T "PULL_REQUEST_TEMPLATE.md"
+        run: gh pr create --fill -T "PULL_REQUEST_TEMPLATE.md"
