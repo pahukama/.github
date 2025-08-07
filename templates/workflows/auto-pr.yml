@@ -15,5 +15,12 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
           
+      - name: Fetch PR template
+        uses: actions/checkout@v4
+        with:
+          repository: pahukama/.github
+          path: .github-org
+          ref: main
+          
       - name: Create PR
-        run: gh pr create --fill -T "PULL_REQUEST_TEMPLATE.md"
+        run: gh pr create --title "${{ github.head_ref }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
