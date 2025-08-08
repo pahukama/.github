@@ -30,6 +30,7 @@ jobs:
         run: |
           mkdir -p .github/workflows/
           cp ../templates/workflows/* .github/workflows/
+          cp ../templates/labels.yml .github/
           cp ../templates/labeler.yml .github/
           cp ../templates/CODEOWNERS .github/
         working-directory: ./${{ matrix.target_repo }}
