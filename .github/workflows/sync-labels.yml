@@ -8,9 +8,6 @@ on:
 jobs:
   sync-labels:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        target_repo: [ 'pahukama-webos' , 'pahukama-dashboard', 'pahukama-serverless' ]
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
