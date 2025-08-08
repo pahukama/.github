@@ -9,7 +9,6 @@ on:
     
 env:
   GH_TOKEN: ${{ github.token }}
-  BRANCH_NAME: ${GITHUB_REF#refs/heads/}
     
 jobs:
   auto-assign-and-label:
@@ -25,7 +24,9 @@ jobs:
           gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR"
           
       - name: Attatch Labels
-        uses: actions/labeler@v5
+        uses: srvaroa/labeler@master
+        with:
+          config_path: .github/labeler.yml
         
   validate-title:
     name: Validate PR Title
