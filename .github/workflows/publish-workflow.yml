@@ -49,4 +49,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          manifest: ../templates/labels.yml
+          manifest: templates/labels.yml
