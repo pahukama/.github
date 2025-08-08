@@ -21,26 +21,26 @@ labels:
     title: "/(security|secure|auth|authentication)/"
   - label: "dependency-update"
     files:
-    - '**/dune'
-    - '**/dune-project'
-    - '**/package.json'
-    - 'deployment/*'
+    - "**/dune"
+    - "**/dune-project"
+    - "**/package.json"
+    - "deployment/*"
   - label: "frontend"
     files:
-    - 'apps/*',
-    - 'app/*',
-    - '**/*.css'
+    - "apps/*",
+    - "app/*",
+    - "**/*.css"
   - label: "backend"
     files:
-    - 'packages/*'
-    - 'lib-*/*'
-    - 'src/handlers/*'
+    - "packages/*"
+    - "lib-*/*"
+    - "src/handlers/*"
   - label: "devops"
     files:
-    - 'deployment/*'
-    - 'configs/*'
-    - 'cdk/*'
-    - '.github/*'
+    - "deployment/*"
+    - "configs/*"
+    - "cdk/*"
+    - ".github/*"
   - label: "documentation"
     files:
-    - '**/*.md'
+    - "**/*.md"
