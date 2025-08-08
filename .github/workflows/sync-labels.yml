@@ -1,0 +1,29 @@
+name: Sync Labels
+on:
+ push:
+   branches: [ 'main' ]
+   paths:
+   - 'templates/**'
+   
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target_repo: [ 'pahukama-webos' , 'pahukama-dashboard', 'pahukama-serverless' ]
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+          
+      - name: Sync Labels
+        uses: micnncim/action-label-syncer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          repository: |
+            pahukama/pahukama-webos
+            pahukama/pahukama-dashboard
+            pahukama/pahukama-serverless
+          manifest: templates/labels.yml
+          token: ${{ secrets.RW_REPO }}
+
