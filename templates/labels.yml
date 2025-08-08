@@ -20,7 +20,7 @@
   description: Extra attention is needed
   color: "#CD059C"
 - name: frontend
-  description: Front end feature/changes
+  description: Front end feature/change
   color: "#2613D5"
 - name: good-first-issue
   description: Good for newcomers
