@@ -21,12 +21,12 @@ jobs:
         run: | # Get the PR number and assign it to the PR author
           PR_NUMBER=${{ github.event.pull_request.number }}
           AUTHOR=${{ github.actor }}
-          gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR"
+          gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR"     
           
-      - uses: TimonVS/pr-labeler-action@v5
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          configuration-path: .github/labeler.yml # optional, .github/pr-labeler.yml is the default value
+      - name: Attatch Labels
+        uses: srvaroa/labeler@master
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         
   validate-title:
     name: Validate PR Title
