@@ -1,3 +1,4 @@
+---
 version: 1
 labels:
   - label: enhancement
@@ -27,8 +28,8 @@ labels:
     - "deployment/*"
   - label: "frontend"
     files:
-    - "apps/*",
-    - "app/*",
+    - "apps/*"
+    - "app/*"
     - "**/*.css"
   - label: "backend"
     files:
