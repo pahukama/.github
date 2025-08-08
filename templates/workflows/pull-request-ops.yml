@@ -23,15 +23,10 @@ jobs:
           AUTHOR=${{ github.actor }}
           gh pr edit "$PR_NUMBER" --add-assignee "$AUTHOR"
           
-      - name: Attatch Labels
-        uses: srvaroa/labeler@master
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-
-      - name: Color all labels
-        uses: AnandChowdhary/color-labels-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: TimonVS/pr-labeler-action@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml # optional, .github/pr-labeler.yml is the default value
         
   validate-title:
     name: Validate PR Title
