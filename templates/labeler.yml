@@ -1,51 +1,46 @@
-# Add 'deps update' label to any change to .md files within the entire repository 
-dependency update:
-- changed-files:
-  - any-glob-to-any-file: '**/dune'
-  - any-glob-to-any-file: '**/dune-project'
-  - any-glob-to-any-file: '**/package.json'
-  - any-glob-to-any-file: 'deployment/*'
-
-# Add 'frontend' label to any change to .md files within the entire repository 
-frontend:
-- changed-files:
-  - any-glob-to-any-file: ['apps/*','app/*','**/*.css']
-
-# Add 'backend' label to any change to .md files within the entire repository 
-backend:
-- changed-files:
-  - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*']
-
-# Add 'devops' label to any change to .md files within the entire repository 
-devops:
-- changed-files:
-  - any-glob-to-any-file: ['deployment/*','configs/*','cdk/*','.github/*']
-
-# Add 'documentation' label to any change to .md files within the entire repository 
-documentation:
-- changed-files:
-  - any-glob-to-any-file: '**/*.md'
-
-# Add 'enhancement' label
-enhancement:
- - head-branch: ['feature','new']
-
-# Add 'task' label
-task:
- - head-branch: ['task','chore']
-
-# Add 'fix' label
-fix:
- - head-branch: ['fix','error','bug','broken']
- 
-# Add 'refactor' label
-refactor:
- - head-branch: ['refactor','redesign','redo']
- 
-# Add 'refactor' label
-revert:
- - head-branch: ['revert']
- 
-# Add 'security' label
-security:
- - head-branch: ['security','secure','auth','authentication']
+version: 1
+labels:
+  - label: enhancement
+    type: "pull_request"
+    branch: "/(feature|new)/"
+  - label: task
+    type: "pull_request"
+    branch: "/(task|chore)"
+  - label: fix
+    type: "pull_request"
+    branch: "/(fix|error|bug|broken)/"
+  - label: refactor
+    type: "pull_request"
+    branch: "/(refactor|redesign|redo)/"
+  - label: revert
+    type: "pull_request"
+    branch: "/revert/"
+  - label: security
+    body: "/(security|secure|auth|authentication)/"
+  - label: security
+    title: "/(security|secure|auth|authentication)/"
+  - label: "dependency-update"
+    files:
+      - '**/dune'
+      - '**/dune-project'
+      - '**/package.json'
+      - 'deployment/*'
+  - label: "frontend"
+    files:
+      - 'apps/*',
+      - 'app/*',
+      - '**/*.css'
+  - label: "backend"
+    files:
+      - 'packages/*'
+      - 'lib-*/*'
+      - 'src/handlers/*']
+  - label: "devops"
+    files:
+      - 'deployment/*'
+      - 'configs/*'
+      - 'cdk/*'
+      - '.github/*']
+  - label: "documentation"
+    files:
+      - '**/*.md'
