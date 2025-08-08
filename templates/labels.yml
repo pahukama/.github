@@ -1,36 +1,36 @@
 - name: backend
   description: Back end feature/changes
-  color: "#6CE796"
+  color: 6CE796
 - name: dependency-update
   description: Project/environment dependencies updated
-  color: "#F26116"
+  color: F26116
 - name: devops
   description: Devops or config related update
-  color: "#9E1BB0"
+  color: 9E1BB0
 - name: documentation
   description: Improvements or additions to documentation
-  color: "#0075ca"
+  color: 0075ca
 - name: enhancement
   description: New feature or request
-  color: "#033D04"
+  color: 033D04
 - name: fix
   description: Bug fix
-  color: "#FBCA04"
+  color: FBCA04
 - name: help-wanted
   description: Extra attention is needed
-  color: "#CD059C"
+  color: CD059C
 - name: frontend
   description: Front end feature or change
-  color: "#2613D5"
+  color: 2613D5
 - name: good-first-issue
   description: Good for newcomers
-  color: "#7057ff"
+  color: 7057ff
 - name: refactor
   description: Substantial refactor of an existing module/feature
-  color: "#7BC8BF"
+  color: 7BC8BF
 - name: securty
   description: Security related issue or request
-  color: "#E0E74D"
+  color: E0E74D
 - name: task
   description: Just another task/chore
-  color: "#6FA7E8"
+  color: 6FA7E8
