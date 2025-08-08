@@ -44,10 +44,3 @@ jobs:
           git commit -m "Github Agent | Workflows has updated"
           git push
         working-directory: ./${{ matrix.target_repo }}
-        
-      - name: Sync Labels
-        uses: micnncim/action-label-syncer@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          manifest: templates/labels.yml
