@@ -32,5 +32,5 @@
   description: Security related issue or request
   color: "#E0E74D"
 - name: task
-  description: Generic task branch label
+  description: Just another task/chore
   color: "#6FA7E8"
