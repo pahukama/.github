@@ -44,5 +44,5 @@ jobs:
           ref: main
           
       - name: Create PR
-        run: gh pr create --title "${{ github.ref_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md"
+        run: gh pr create --title "${{ github.ref_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" -D
         continue-on-error: true
