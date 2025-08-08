@@ -27,6 +27,11 @@ jobs:
         uses: srvaroa/labeler@master
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Color all labels
+        uses: AnandChowdhary/color-labels-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
   validate-title:
     name: Validate PR Title
