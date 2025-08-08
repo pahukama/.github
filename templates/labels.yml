@@ -5,7 +5,7 @@
   description: Project/environment dependencies updated
   color: "#F26116"
 - name: devops
-  description: Devops related update
+  description: Devops or config related update
   color: "#9E1BB0"
 - name: documentation
   description: Improvements or additions to documentation
