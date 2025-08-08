@@ -16,8 +16,8 @@ backend:
 - changed-files:
   - any-glob-to-any-file: ['packages/*','lib-*/*','src/handlers/*']
 
-# Add 'ops' label to any change to .md files within the entire repository 
-ops:
+# Add 'devops' label to any change to .md files within the entire repository 
+devops:
 - changed-files:
   - any-glob-to-any-file: ['deployment/*','configs/*','cdk/*','.github/*']
 
