@@ -32,7 +32,7 @@ jobs:
         uses: nipe0324/update-project-v2-item-field@v2.0.2
         with:
           project-url: https://github.com/orgs/pahukama/projects/2
-          github-token: ${{ secrets.RW_REPO }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           field-name: "Status"
           field-value: "Development - In Progress"
         
