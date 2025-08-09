@@ -27,6 +27,14 @@ jobs:
         uses: srvaroa/labeler@master
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Update status to in progress
+        uses: nipe0324/update-project-v2-item-field@v2.0.2
+        with:
+          project-url: https://github.com/orgs/pahukama/projects/2
+          github-token: ${{ secrets.RW_REPO }}
+          field-name: "Status"
+          field-value: "Development - In Progress"
         
   validate-title:
     name: Validate PR Title
