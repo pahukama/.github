@@ -16,10 +16,10 @@ about: Report bugs here.
   - **Other relevant software/dependencies:** [e.g., Node.js v18.0, Python 3.9]
 
 ## Steps to Reproduce the Problem
-  [1. Go to '...']
-  [2. Click on '....']
-  [3. Scroll down to '....']
-  [4. See error]
+  1. [Go to '...']
+  2. [Click on '....']
+  3. [Scroll down to '....']
+  4. [See error]
 
 ## Additional Context (Optional)
 [Add any other context about the problem here.]
