@@ -1,7 +1,6 @@
 ---
 name: New Feature/Chore
 about: Create a new issue for a feature or chore.
-title: 'story: '
 ---
 
 ## Feature Description
