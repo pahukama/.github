@@ -3,23 +3,23 @@ version: 1
 labels:
   - label: enhancement
     type: "pull_request"
-    branch: "(feature|new)"
+    branch: "/(feature|new)/mig"
   - label: task
     type: "pull_request"
-    branch: "(task|chore)"
+    branch: "/(task|chore|todo)/mig"
   - label: fix
     type: "pull_request"
-    branch: "(fix|error|bug|broken)"
+    branch: "/(fix|error|bug|broken)/mig"
   - label: refactor
     type: "pull_request"
-    branch: "(refactor|redesign|redo)"
+    branch: "/(refactor|redesign|redo)/mig"
   - label: revert
     type: "pull_request"
-    branch: "/revert/"
+    branch: "/(revert|undo)/mig"
   - label: security
-    body: "(security|secure|auth|authentication)"
+    branch: "/(security|secure|auth)/mig"
   - label: security
-    title: "(security|secure|auth|authentication)"
+    title: "/(security|secure|auth)/mig"
   - label: "dependency-update"
     files:
     - "**/dune"
