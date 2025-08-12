@@ -35,6 +35,15 @@ jobs:
           github-token: ${{ secrets.RW_REPO }}
           field-name: "Status"
           field-value: "Development - In Progress"
+      
+      - name: Update status to in review
+        if: ${{ github.event.action == 'review_requested' }}
+        uses: nipe0324/update-project-v2-item-field@v2.0.2
+        with:
+          project-url: https://github.com/orgs/pahukama/projects/2
+          github-token: ${{ secrets.RW_REPO }}
+          field-name: "Status"
+          field-value: "Development - Under Review"
         
   validate-title:
     name: Validate PR Title
