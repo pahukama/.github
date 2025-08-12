@@ -5,7 +5,7 @@ name: Pull Request Ops
 
 on: 
   pull_request: 
-    types: [opened, edited, synchronize, reopened]
+    types: [opened, edited, synchronize, reopened, review_requested]
     
 env:
   GH_TOKEN: ${{ github.token }}
