@@ -1,11 +1,11 @@
 ---
-name: New Feature/Task
-about: Create a new issue for a feature or task.
+name: New Feature/Chore
+about: Create a new issue for a feature or chore.
 title: 'story: '
 ---
 
 ## Feature Description
-[ Briefly describe the feature being proposed. ]
+[ Briefly describe the feature being proposed or chore needing to be completed. ]
 
 <!-- Free to remove or add sections as they pertain to the feature/task in question -->
 ### User Stories
@@ -25,11 +25,11 @@ title: 'story: '
 - [Criterion 2]
 ---
 
-## Technical Notes
+### Technical Notes
 [Describe any proposed technical solutions, dependencies, or potential impacts on existing code.]
 
-## Alternatives Considered (Optional)
+### Alternatives Considered (Optional)
 [Discuss any alternative approaches or solutions considered and why this particular feature is preferred.]
 
-## Additional Context
+### Additional Context
 [Add any other relevant information, screenshots, mockups, or links.]
