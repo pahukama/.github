@@ -1,41 +1,35 @@
 ---
 name: New Feature/Task
 about: Create a new issue for a feature or task.
+title: 'story: '
 ---
 
-## User Story
-
-Briefly describe the feature being introduced.
-
+## Feature Description
+[ Briefly describe the feature being proposed. ]
 
 <!-- Free to remove or add sections as they pertain to the feature/task in question -->
+### User Stories
+- As a [type of user], I want to [action] so that [benefit].
+
 ### Rationale
-
-Explain the reasoning behind this feature and its benefits to the project.
-
-
-
-### Design Documentation
-
-Link to any design documents or diagrams relevant to this feature.
-
-
+[Explain the reasoning behind this feature and its benefits to the project.]
 
 ### Impact
+[Discuss any potential impacts this feature may have on existing functionalities.]
 
-Discuss any potential impacts this feature may have on existing functionalities.
-
-
+### Design Documentation
+[Link to any design documents or diagrams relevant to this feature.]
 
 ### Acceptance Criteria
+- [Criterion 1]
+- [Criterion 2]
 ---
 
+## Technical Notes
+[Describe any proposed technical solutions, dependencies, or potential impacts on existing code.]
 
+## Alternatives Considered (Optional)
+[Discuss any alternative approaches or solutions considered and why this particular feature is preferred.]
 
-### Implementation Notes
----
-
-
-
-### Dependencies
----
+## Additional Context
+[Add any other relevant information, screenshots, mockups, or links.]
