@@ -28,6 +28,18 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Linke Issue Attempt 1
+        uses: tkt-actions/add-issue-links@v1.8.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}' # required
+          branch-prefix: 'issue-' # required
+
+      - name: Linke Issue Attempt 2
+        uses: tkt-actions/add-issue-links@v1.8.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}' # required
+          branch-prefix: '#' # required
+
       - name: Update status to in progress
         uses: nipe0324/update-project-v2-item-field@v2.0.2
         with:
