@@ -37,7 +37,7 @@ about: Define a large-scale initiative or feature.
 - [Stakeholder 2]
 
 ### Proposed Timeline
-[e.g., Q4 2025 - Q1 2026]
+- [e.g., Q4 2025 - Q1 2026]
 
 ### Notes / Open Questions
 - [Note/Question 1]
