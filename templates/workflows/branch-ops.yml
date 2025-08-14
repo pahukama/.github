@@ -4,8 +4,8 @@
 name: Branch Ops
 
 on: 
-  push:
-    branches-ignore: [ main ]
+  create:
+    branches: [ "*" ]
 
 env:
   GH_TOKEN: ${{ github.token }}
@@ -28,6 +28,31 @@ jobs:
           echo github.ref_name
           echo "Invalid branch name, must start with: feature, fix, task, refactor, or revert."
           exit 1
+
+  name: Link Branch to Issue
+
+on:
+  create:
+    branches:
+      - '*' # Trigger on any new branch creation
+
+jobs:
+  link_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Linke Issue Attempt 1
+        uses: tkt-actions/add-issue-links@v1.8.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}' # required
+          header: '## Related Issues(s)'
+          branch-prefix: 'issue-' # required
+
+      - name: Linke Issue Attempt 2
+        uses: tkt-actions/add-issue-links@v1.8.1
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}' # required
+          header: '## Related Issues(s)'
+          branch-prefix: '#' # required
               
   create-pull-request:
     name: Create Draft PR
