@@ -6,6 +6,7 @@ about: Create a new issue for a feature or chore.
 ## Feature Description
 [ Briefly describe the feature being proposed or chore needing to be completed. ]
 ---
+
 <!-- Free to remove or add sections as they pertain to the feature/task in question -->
 ### User Stories
 - As a [type of user], I want to [action] so that [benefit].
@@ -16,6 +17,7 @@ about: Create a new issue for a feature or chore.
 ### Impact
 [Discuss any potential impacts this feature may have on existing functionalities.]
 ---
+
 
 ### Acceptance Criteria
 - [Criterion 1]
