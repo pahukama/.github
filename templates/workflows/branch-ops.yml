@@ -55,7 +55,7 @@ jobs:
           ref: main
           
       - name: Create PR
-        run: gh pr create --title "${{ validate-branch.outputs.branch_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" --draft
+        run: gh pr create --title "${{ needs.validate-branch.outputs.branch_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" --draft
         continue-on-error: true
 
       - name: Linke Issue Attempt 1
