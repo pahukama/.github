@@ -17,8 +17,8 @@ jobs:
   validate-branch:
     name: Validate Branch Name
     runs-on: ubuntu-latest
-  outputs:
-    branch_name: ${{ steps.extract_branch.outputs.branch }}
+    outputs:
+      branch_name: ${{ steps.extract_branch.outputs.branch }}
 
     steps:
       - name: Extract branch name
