@@ -6,8 +6,8 @@ name: Branch Ops
 on: 
   create:
     branches: [ "*" ]
-  pull-request:
-    [edited]
+  pull_request: 
+    types: [edited]
     
 env:
   GH_TOKEN: ${{ github.token }}
