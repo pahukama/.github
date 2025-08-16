@@ -34,7 +34,7 @@ jobs:
           !startsWith(steps.extract_branch.outputs.branch,'refactor') &&
           !startsWith(steps.extract_branch.outputs.branch,'revert')
         run: |
-          echo ${{ github.ref_name }}
+          echo ${{ steps.extract_branch.outputs.branch }}
           echo "Invalid branch name, must start with: feature, fix, task, refactor, or revert."
           exit 1
               
