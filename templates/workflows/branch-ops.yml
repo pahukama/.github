@@ -17,6 +17,8 @@ jobs:
   validate-branch:
     name: Validate Branch Name
     runs-on: ubuntu-latest
+  outputs:
+    branch_name: ${{ steps.extract_branch.outputs.branch }}
 
     steps:
       - name: Extract branch name
@@ -53,7 +55,7 @@ jobs:
           ref: main
           
       - name: Create PR
-        run: gh pr create --title "${{ github.ref_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" --draft
+        run: gh pr create --title "${{ validate_branch.outputs.branch_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" --draft
         continue-on-error: true
 
       - name: Linke Issue Attempt 1
