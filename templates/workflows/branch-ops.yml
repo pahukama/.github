@@ -1,62 +1,43 @@
 # This workflow will automatically create a new pull request when a new branch is pushed and validated
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Branch Ops
-
-on: 
+on:
   create:
-    branches: [ "*" ]
-  pull_request: 
-    types: [edited]
-    
-env:
-  GH_TOKEN: ${{ github.token }}
-  BRANCH_NAME: ${GITHUB_REF#refs/heads/}
-      
-jobs:
-  validate-branch:
-    name: Validate Branch Name
-    runs-on: ubuntu-latest
-    outputs:
-      branch_name: ${{ steps.extract_branch.outputs.branch }}
+    branches:
+      - '*'
+  pull_request:
+    types: [ edited ]
 
-    steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
-      
-      - name: Validate branch name
-        if: |
-          !startsWith(steps.extract_branch.outputs.branch,'feature') && 
-          !startsWith(steps.extract_branch.outputs.branch,'fix') &&
-          !startsWith(steps.extract_branch.outputs.branch,'task') &&
-          !startsWith(steps.extract_branch.outputs.branch,'refactor') &&
-          !startsWith(steps.extract_branch.outputs.branch,'revert')
-        run: |
-          echo ${{ steps.extract_branch.outputs.branch }}
-          echo "Invalid branch name, must start with: feature, fix, task, refactor, or revert."
-          exit 1
-              
-  create-pull-request-and-link-issues:
-    name: Create Draft PR & Link Issue(s)
-    needs: validate-branch # This causes the step to abort if validation failed
+jobs:
+  validate-and-pr:
+    name: Validate Branch Name and Create PR
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout branch
-        uses: actions/checkout@v4
-          
-      - name: Fetch PR template
-        uses: actions/checkout@v4
+      - name: Get Branch Name
+        id: get_branch_name
+        run: echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+
+      - name: Validate Branch Name
+        if: | 
+          ${{ !startsWith(steps.get_branch_name.outputs.BRANCH_NAME, 'feature/') 
+              && !startsWith(steps.get_branch_name.outputs.BRANCH_NAME, 'fix/' 
+              && !startsWith(steps.get_branch_name.outputs.BRANCH_NAME, 'task/'
+              && !startsWith(steps.get_branch_name.outputs.BRANCH_NAME, 'revert/'
+              && !startsWith(steps.get_branch_name.outputs.BRANCH_NAME, 'refactor/')
+            }}
+        run: |
+          echo "Error: Branch name '${{ steps.get_branch_name.outputs.BRANCH_NAME }}' does not follow conventions (e.g., 'feature/' or 'bugfix/')."
+          exit 1
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
         with:
-          repository: pahukama/.github
-          path: .github-org
-          ref: main
-          
-      - name: Create PR
-        run: gh pr create --title "${{ needs.validate-branch.outputs.branch_name }}" --body-file ".github-org/.github/PULL_REQUEST_TEMPLATE.md" --draft
-        continue-on-error: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat: Initial commit for new branch"
+          title: "Draft PR for ${{ steps.get_branch_name.outputs.BRANCH_NAME }}"
+          body: "This is a draft PR for the newly created branch. Please add details and mark ready for review when complete."
+          branch: ${{ steps.get_branch_name.outputs.BRANCH_NAME }}
+          base: main
+          draft: true
 
       - name: Linke Issue Attempt 1
         uses: tkt-actions/add-issue-links@v1.8.1
