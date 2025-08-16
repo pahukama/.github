@@ -19,13 +19,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      
       - name: Validate branch name
         if: |
-          !startsWith(github.ref_name,'feature') && 
-          !startsWith(github.ref_name,'fix') &&
-          !startsWith(github.ref_name,'task') &&
-          !startsWith(github.ref_name,'refactor') &&
-          !startsWith(github.ref_name,'revert')
+          !startsWith(steps.extract_branch.outputs.branch,'feature') && 
+          !startsWith(steps.extract_branch.outputs.branch,'fix') &&
+          !startsWith(steps.extract_branch.outputs.branch,'task') &&
+          !startsWith(steps.extract_branch.outputs.branch,'refactor') &&
+          !startsWith(steps.extract_branch.outputs.branch,'revert')
         run: |
           echo ${{ github.ref_name }}
           echo "Invalid branch name, must start with: feature, fix, task, refactor, or revert."
