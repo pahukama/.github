@@ -8,6 +8,8 @@ on:
       - '*'
   pull_request:
     types: [ edited ]
+  pull_request_review:
+    types: [edited, submitted]
 
 env:
   GH_TOKEN: ${{ github.token }}
