@@ -34,7 +34,7 @@ labels:
   - label: "backend"
     files:
     - "packages/*"
-    - "lib-*/*"
+    - "lib-pahukama/*"
     - "src/handlers/*"
   - label: "devops"
     files:
@@ -45,3 +45,30 @@ labels:
   - label: "documentation"
     files:
     - "**/*.md"
+  - label: Admin Domain
+      files:
+    - "**/admin-domain/*"
+  - label: Airtime Domain
+      files:
+    - "**/*airtime-domain/*"
+  - label: Customer Domain
+      files:
+    - "**/customer-domain/*"
+  - label: DialFrom Domain
+      files:
+    - "**/*dialfrom-domain/*"
+  - label: Merchant Domain
+      files:
+    - "**/merchant-domain/*"
+  - label: Order Domain
+      files:
+    - "**/order-domain/*"
+  - label: Shared/Common Modules
+      files:
+    - "**/shared*/*"
+  - label: Shop Domain
+      files:
+    - "**/shop-domain/*"
+  - label: Voucher Domain
+      files:
+    - "**/voucher-domain/*"
