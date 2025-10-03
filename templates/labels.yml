@@ -56,7 +56,7 @@
 - name: refactor
   description: Substantial refactor of an existing module/feature
   color: C2FDF0
-- name: securty
+- name: security/auth
   description: Security related issue or request
   color: E0E74D
 - name: task
