@@ -2,12 +2,15 @@
 - name: Admin Domain
   description: Admin Domain
   color: fef2c0
+- name: Airtime Domain
+  description: Airtime Domain
+  color: 080FE7
 - name: Customer Domain
   description: Customer Domain
   color: 264154
-- name: Digital Services Domain
-  description: Digital Services Domain
-  color: C743CA
+- name: DialFrom Domain
+  description: DialFrom Domain
+  color: 54FD56
 - name: Merchant Domain
   description: Merchant Domain
   color: C3968C
@@ -20,6 +23,9 @@
 - name: Shop Domain
   description: Shop Domain
   color: EA912C
+- name: Voucher Domain
+  description: Voucher Domain
+  color: EC50E1
 - name: backend
   description: Back end feature/changes
   color: 006B75
