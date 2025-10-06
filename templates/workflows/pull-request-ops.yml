@@ -51,40 +51,21 @@ jobs:
           ISSUE_ID=$(gh pr view ${{ github.event.pull_request.number }} --json closingIssuesReferences --jq '.closingIssuesReferences[0].id')
           echo "LINKED_ISSUE_ID=$ISSUE_ID" >> $GITHUB_ENV
 
-      - name: Get Project Details and Status
+      - name: Update Issue Status to In Development
         id: get_project_details
         if: env.LINKED_ISSUE_ID
         run: |
           PROJECT_OWNER="pahukama" # Replace with your organization or username
           PROJECT_NUMBER="2" # Replace with your project number
           
-          PROJECT_ID=$(gh project view $PROJECT_NUMBER --owner $PROJECT_OWNER --format json | jq -r '.id')
-          FIELDS=$(gh project field-list $PROJECT_NUMBER --owner $PROJECT_OWNER --format json)
+          PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
+          FIELDS=$(gh project field-list 2 --owner pahukama --format json)
           
           STATUS_FIELD_ID=$(echo "$FIELDS" | jq -r '.[] | select(.name == "Status") | .id')
           IN_PROGRESS_OPTION_ID=$(echo "$FIELDS" | jq -r '.[] | select(.name == "Status") | .options[] | select(.name == "Backlog - In Development") | .id')
 
-          echo "PROJECT_ID=$PROJECT_ID" >> $GITHUB_ENV
-          echo "STATUS_FIELD_ID=$STATUS_FIELD_ID" >> $GITHUB_ENV
-          echo "IN_PROGRESS_OPTION_ID=$IN_PROGRESS_OPTION_ID" >> $GITHUB_ENV
-
-      - name: Update Issue Status to In Progress
-        if: env.LINKED_ISSUE_ID && env.PROJECT_ID && env.STATUS_FIELD_ID && env.IN_PROGRESS_OPTION_ID
-        run: |
-          gh api graphql -f query='
-            mutation($issueId:ID!, $projectId:ID!, $fieldId:ID!, $optionId:String!) {
-              updateProjectV2ItemFieldValue(input: {
-                projectId: $projectId,
-                fieldId: $fieldId,
-                itemId: $issueId,
-                value: { singleSelectOptionId: $optionId }
-              }) {
-                projectV2Item {
-                  id
-                }
-              }
-            }' -f issueId="${{ env.LINKED_ISSUE_ID }}" -f projectId="${{ env.PROJECT_ID }}" -f fieldId="${{ env.STATUS_FIELD_ID }}" -f optionId="${{ env.IN_PROGRESS_OPTION_ID }}"
-       
+          gh project item-edit $PROJECT_ID --id ${{ env.LINKED_ISSUE_ID }} --field-id $STATUS_FIELD_ID --single-select-option-id $IN_PROGRESS_OPTION_ID
+          
         
   validate-title:
     name: Validate PR Title
