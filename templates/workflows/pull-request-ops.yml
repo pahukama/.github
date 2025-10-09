@@ -56,7 +56,7 @@ jobs:
         if: env.LINKED_ISSUE_ID
         run: |
           PROJECT_OWNER="pahukama" # Replace with your organization or username
-          PROJECT_NUMBER="2" # Replace with your project number
+          PROJECT_NUMBER=2 # Replace with your project number
           
           PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
           FIELDS=$(gh project field-list 2 --owner pahukama --format json)
