@@ -75,7 +75,7 @@ labels:
     - "**/order-domain/**"
     - "**/order_domain/**"
     - "**/order-dashboard/**"
-  - label: "Shared/Common Modules
+  - label: "Shared/Common Modules"
     files:
     - "**/shared-**/**"
     - "**/shared/**"
