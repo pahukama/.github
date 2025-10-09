@@ -50,6 +50,7 @@ labels:
     - "**/*.md"
   - label: "Admin Domain"
     files:
+    - "\\/admin-"
     - "*/admin-domain/*"
     - "**/admin_domain/*"
     - "**/admin-dashboard/*"
