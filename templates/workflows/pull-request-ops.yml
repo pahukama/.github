@@ -54,10 +54,9 @@ jobs:
       - name: Update Issue Status to In Development
         id: get_project_details
         if: env.LINKED_ISSUE_ID
+        env:
+          GITHUB_TOKEN: "${{ secrets.RW_REPO }}"
         run: |
-          PROJECT_OWNER="pahukama" # Replace with your organization or username
-          PROJECT_NUMBER=2 # Replace with your project number
-          
           PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
           FIELDS=$(gh project field-list 2 --owner pahukama --format json)
           
@@ -65,6 +64,7 @@ jobs:
           IN_PROGRESS_OPTION_ID=$(echo "$FIELDS" | jq -r '.[] | select(.name == "Status") | .options[] | select(.name == "Backlog - In Development") | .id')
 
           gh project item-edit $PROJECT_ID --id ${{ env.LINKED_ISSUE_ID }} --field-id $STATUS_FIELD_ID --single-select-option-id $IN_PROGRESS_OPTION_ID
+        
           
         
   validate-title:
