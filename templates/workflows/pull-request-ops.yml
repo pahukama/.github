@@ -8,7 +8,7 @@ on:
     types: [opened, edited, synchronize, reopened, review_requested]
     
 env:
-  GH_TOKEN: ${{ secrets.RW_REPO }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
   auto-assign-and-label:
@@ -55,14 +55,14 @@ jobs:
         id: get_project_details
         if: env.LINKED_ISSUE_ID
         run: |
+          gh project list --owner pahukama
           PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
           FIELDS=$(gh project field-list 2 --owner pahukama --format json)
           
           STATUS_FIELD_ID=$(echo "$FIELDS" | jq -r '.[] | select(.name == "Status") | .id')
           IN_PROGRESS_OPTION_ID=$(echo "$FIELDS" | jq -r '.[] | select(.name == "Status") | .options[] | select(.name == "Backlog - In Development") | .id')
 
-          gh project item-edit $PROJECT_ID --id ${{ env.LINKED_ISSUE_ID }} --field-id $STATUS_FIELD_ID --single-select-option-id $IN_PROGRESS_OPTION_ID
-        
+          gh project item-edit $PROJECT_ID --id ${{ env.LINKED_ISSUE_ID }} --field-id $STATUS_FIELD_ID --single-select-option-id $IN_PROGRESS_OPTION_ID        
           
         
   validate-title:
