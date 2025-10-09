@@ -22,70 +22,70 @@ labels:
     title: "(security|secure|auth|authentication)"
   - label: "dependency-update"
     files:
-    - "*/dune"
-    - "*/dune-project"
-    - "*/package.json"
-    - "deployment/*"
+    - "**/dune"
+    - "**/dune-project"
+    - "**/package.json"
+    - "deployment/**"
   - label: "frontend"
     files:
-    - "apps/*"
-    - "app/*"
-    - "*/*.css"
+    - "apps/**"
+    - "app/**"
+    - "**/**.css"
   - label: "backend"
     files:
-    - "packages/*"
-    - "lib-pahukama/*"
-    - "src/handlers/*"
+    - "packages/**"
+    - "lib-pahukama/**"
+    - "src/handlers/**"
   - label: "devops"
     files:
-    - "deployment/*"
-    - "configs/*"
-    - "cdk/*"
-    - ".github/*"
+    - "deployment/**"
+    - "configs/**"
+    - "cdk/**"
+    - ".github/**"
   - label: "documentation"
     files:
-    - "*/*.md"
-  - label: Admin Domain
+    - "**/**.md"
+  - label: "Admin Domain"
     files:
-    - "*/admin-domain/*"
-    - "*/admin_domain/*"
-    - "*/admin-dashboard/*"
-  - label: Airtime Domain
+    - "**/admin-domain/**"
+    - "**/admin_domain/**"
+    - "**/admin-dashboard/**"
+  - label: "Airtime Domain"
     files:
-    - "*/airtime-domain/*"
-    - "*/airtime_domain/*"
-    - "*/airtime-dashboard/*"
-  - label: Customer Domain
+    - "**/airtime-domain/**"
+    - "**/airtime_domain/**"
+    - "**/airtime-dashboard/**"
+  - label: "Customer Domain"
     files:
-    - "*/customer-domain/*"
-    - "*/customer_domain/*"
-    - "*/customer_dashboard/*"
-  - label: DialFrom Domain
+    - "**/customer-domain/**"
+    - "**/customer_domain/**"
+    - "**/customer_dashboard/**"
+  - label: "DialFrom Domain"
     files:
-    - "*/dialfrom-domain/*"
-    - "*/dialfrom_domain/*"
-    - "*/dialfrom-dashboard/*"
-  - label: Merchant Domain
+    - "**/dialfrom-domain/**"
+    - "**/dialfrom_domain/**"
+    - "**/dialfrom-dashboard/**"
+  - label: "Merchant Domain"
     files:
-    - "*/merchant-domain/*"
-    - "*/merchant_domain/*"
-    - "*/merchant-dashboard/*"
-  - label: Order Domain
+    - "**/merchant-domain/**"
+    - "**/merchant_domain/**"
+    - "**/merchant-dashboard/**"
+  - label: "Order Domain"
     files:
-    - "*/order-domain/*"
-    - "*/order_domain/*"
-    - "*/order-dashboard/*"
-  - label: Shared/Common Modules
+    - "**/order-domain/**"
+    - "**/order_domain/**"
+    - "**/order-dashboard/**"
+  - label: "Shared/Common Modules
     files:
-    - "*/shared-*/*"
-    - "*/shared/*"
-  - label: Shop Domain
+    - "**/shared-**/**"
+    - "**/shared/**"
+  - label: "Shop Domain"
     files:
-    - "*/shop-domain/*"
-    - "*/shop_domain/*"
-    - "*/shop-dashboard/*"
-  - label: Voucher Domain
+    - "**/shop-domain/**"
+    - "**/shop_domain/**"
+    - "**/shop-dashboard/**"
+  - label: "Voucher Domain"
     files:
-    - "*/voucher-domain/*"
-    - "*/voucher_domain/*"
-    - "*/voucher-dashboard/*"
+    - "**/voucher-domain/**"
+    - "**/voucher_domain/**"
+    - "**/voucher-dashboard/**"
