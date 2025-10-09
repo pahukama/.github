@@ -23,8 +23,11 @@ labels:
   - label: "dependency-update"
     files:
     - "**/dune"
+    - "dune"
     - "**/dune-project"
+    - "dune-project"
     - "**/package.json"
+    - "package.json"
     - "deployment/*"
   - label: "frontend"
     files:
@@ -35,7 +38,7 @@ labels:
     files:
     - "packages/*"
     - "lib-pahukama/*"
-    - "src/handlers/*"
+    - "functions/*"
   - label: "devops"
     files:
     - "deployment/*"
@@ -47,7 +50,7 @@ labels:
     - "**/*.md"
   - label: "Admin Domain"
     files:
-    - "**/admin-domain/*"
+    - "*/admin-domain/*"
     - "**/admin_domain/*"
     - "**/admin-dashboard/*"
   - label: "Airtime Domain"
@@ -77,7 +80,8 @@ labels:
     - "**/order-dashboard/*"
   - label: "Shared/Common Modules"
     files:
-    - "**/shared-**/*"
+    - "**/shared-sdk/*"
+    - "**/shared-cdk/*"
     - "**/shared/*"
   - label: "Shop Domain"
     files:
