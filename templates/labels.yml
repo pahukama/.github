@@ -1,29 +1,29 @@
 
-- name: Admin Domain
-  description: Admin Domain
+- name: "Admin Domain"
+  description: Admin Domain Target
   color: fef2c0
-- name: Airtime Domain
+- name: "Airtime Domain"
   description: Airtime Domain
   color: 080FE7
-- name: Customer Domain
+- name: "Customer Domain"
   description: Customer Domain
   color: 264154
-- name: DialFrom Domain
+- name: "DialFrom Domain"
   description: DialFrom Domain
   color: 54FD56
-- name: Merchant Domain
+- name: "Merchant Domain"
   description: Merchant Domain
   color: C3968C
-- name: Order Domain
+- name: "Order Domain"
   description: Order Domain
   color: DEE01D
-- name: Shared/Common Modules
+- name: "Shared/Common Modules"
   description: Shared/Common Modules
   color: 14BB91
-- name: Shop Domain
+- name: "Shop Domain"
   description: Shop Domain
   color: EA912C
-- name: Voucher Domain
+- name: "Voucher Domain"
   description: Voucher Domain
   color: EC50E1
 - name: backend
