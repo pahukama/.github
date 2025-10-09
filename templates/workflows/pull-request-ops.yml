@@ -55,7 +55,7 @@ jobs:
         id: get_project_details
         if: env.LINKED_ISSUE_ID
         env:
-          GITHUB_TOKEN: "${{ secrets.RW_REPO }}"
+          GITHUB_TOKEN: "${{ github.token }}"
         run: |
           PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
           FIELDS=$(gh project field-list 2 --owner pahukama --format json)
