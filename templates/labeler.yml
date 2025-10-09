@@ -46,46 +46,46 @@ labels:
     files:
     - "**/*.md"
   - label: Admin Domain
-      files:
+    files:
     - "**/admin-domain/*"
     - "**/admin_domain/*"
     - "**/admin-dashboard/*"
   - label: Airtime Domain
-      files:
+    files:
     - "**/airtime-domain/*"
     - "**/airtime_domain/*"
     - "**/airtime-dashboard/*"
   - label: Customer Domain
-      files:
+    files:
     - "**/customer-domain/*"
     - "**/customer_domain/*"
     - "**/customer_dashboard/*"
   - label: DialFrom Domain
-      files:
+    files:
     - "**/dialfrom-domain/*"
     - "**/dialfrom_domain/*"
     - "**/dialfrom-dashboard/*"
   - label: Merchant Domain
-      files:
+    files:
     - "**/merchant-domain/*"
     - "**/merchant_domain/*"
     - "**/merchant-dashboard/*"
   - label: Order Domain
-      files:
+    files:
     - "**/order-domain/*"
     - "**/order_domain/*"
     - "**/order-dashboard/*"
   - label: Shared/Common Modules
-      files:
+    files:
     - "**/shared-*/*"
     - "**/shared/*"
   - label: Shop Domain
-      files:
+    files:
     - "**/shop-domain/*"
     - "**/shop_domain/*"
     - "**/shop-dashboard/*"
   - label: Voucher Domain
-      files:
+    files:
     - "**/voucher-domain/*"
     - "**/voucher_domain/*"
     - "**/voucher-dashboard/*"
