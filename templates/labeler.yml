@@ -22,15 +22,15 @@ labels:
     title: "(security|secure|auth|authentication)"
   - label: "dependency-update"
     files:
-    - "**/dune"
-    - "**/dune-project"
-    - "**/package.json"
+    - "*/dune"
+    - "*/dune-project"
+    - "*/package.json"
     - "deployment/*"
   - label: "frontend"
     files:
     - "apps/*"
     - "app/*"
-    - "**/*.css"
+    - "*/*.css"
   - label: "backend"
     files:
     - "packages/*"
@@ -44,48 +44,48 @@ labels:
     - ".github/*"
   - label: "documentation"
     files:
-    - "**/*.md"
+    - "*/*.md"
   - label: Admin Domain
     files:
-    - "**/admin-domain/*"
-    - "**/admin_domain/*"
-    - "**/admin-dashboard/*"
+    - "*/admin-domain/*"
+    - "*/admin_domain/*"
+    - "*/admin-dashboard/*"
   - label: Airtime Domain
     files:
-    - "**/airtime-domain/*"
-    - "**/airtime_domain/*"
-    - "**/airtime-dashboard/*"
+    - "*/airtime-domain/*"
+    - "*/airtime_domain/*"
+    - "*/airtime-dashboard/*"
   - label: Customer Domain
     files:
-    - "**/customer-domain/*"
-    - "**/customer_domain/*"
-    - "**/customer_dashboard/*"
+    - "*/customer-domain/*"
+    - "*/customer_domain/*"
+    - "*/customer_dashboard/*"
   - label: DialFrom Domain
     files:
-    - "**/dialfrom-domain/*"
-    - "**/dialfrom_domain/*"
-    - "**/dialfrom-dashboard/*"
+    - "*/dialfrom-domain/*"
+    - "*/dialfrom_domain/*"
+    - "*/dialfrom-dashboard/*"
   - label: Merchant Domain
     files:
-    - "**/merchant-domain/*"
-    - "**/merchant_domain/*"
-    - "**/merchant-dashboard/*"
+    - "*/merchant-domain/*"
+    - "*/merchant_domain/*"
+    - "*/merchant-dashboard/*"
   - label: Order Domain
     files:
-    - "**/order-domain/*"
-    - "**/order_domain/*"
-    - "**/order-dashboard/*"
+    - "*/order-domain/*"
+    - "*/order_domain/*"
+    - "*/order-dashboard/*"
   - label: Shared/Common Modules
     files:
-    - "**/shared-*/*"
-    - "**/shared/*"
+    - "*/shared-*/*"
+    - "*/shared/*"
   - label: Shop Domain
     files:
-    - "**/shop-domain/*"
-    - "**/shop_domain/*"
-    - "**/shop-dashboard/*"
+    - "*/shop-domain/*"
+    - "*/shop_domain/*"
+    - "*/shop-dashboard/*"
   - label: Voucher Domain
     files:
-    - "**/voucher-domain/*"
-    - "**/voucher_domain/*"
-    - "**/voucher-dashboard/*"
+    - "*/voucher-domain/*"
+    - "*/voucher_domain/*"
+    - "*/voucher-dashboard/*"
