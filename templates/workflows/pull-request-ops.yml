@@ -8,7 +8,7 @@ on:
     types: [opened, edited, synchronize, reopened, review_requested]
     
 env:
-  GH_TOKEN: ${{ github.token }}
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
 jobs:
   auto-assign-and-label:
@@ -54,8 +54,6 @@ jobs:
       - name: Update Issue Status to In Development
         id: get_project_details
         if: env.LINKED_ISSUE_ID
-        env:
-          GITHUB_TOKEN: "${{ sercrets.GITHUB_TOKEN }}"
         run: |
           PROJECT_ID=$(gh project view 2 --owner pahukama --format json | jq -r '.id')
           FIELDS=$(gh project field-list 2 --owner pahukama --format json)
