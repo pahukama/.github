@@ -1,10 +1,11 @@
 # Development Practices
 
-## Feature Communication Should be Handled in Github Projects
+## Feature Communication Should be Handled in Github Issue Projects & Pull Requests
 
-The issue summary should be used to easily identify what the story relates to (ex. implement performers endpoint, add oauth sso, etc ...)
+The issue summary should be used to easily identify what the story relates to (ex. implement performers endpoint, add oauth sso, etc ...). If possibile, the description should include a detailed explanation of the business requirements as well as any preliminary documents or links that help team members understand what needs to be done.
 
-If possibile, the description should include a detailed explanation of the business requirements as well as any preliminary documents or links that help team members understand what needs to be done.
+##### Although there are Github actions that will be assisting the process, each developer is ultimately responsible for managing the status of issues they are assigned. Keeping them as up to date as possible will always make it as clear as possible what your working on, this is critical in a remote/distributed team.
+
 
 ### What Should be Included in Comments
 * Questions relating to issue requirements
@@ -15,77 +16,80 @@ If possibile, the description should include a detailed explanation of the busin
 * Notes explaining time estimation changes
 * Other important information that makes it easy for everyone to follow the issues's progression
 
-## Github Conventions and Guidelines
-
-Please read [this excellent article](https://chris.beams.io/posts/git-commit/) on commit messages and adhere to them. It makes the lives of those who come after you a lot easier.
-
-### Branching
+## Branching
 
 Branches should consist of one unit of work per branch and should comply with the following naming convention:<br>
 
-**Regex:** `[a-z]+\/(rp)-\d+((-.*)*)`<br>
+**Regex:** `^(feature|fix|task|refactor|revert){1}(\([\w\-\.]+\))?(!)?: ([\w ])+([\s\S]*)`<br>
 
-**Allowed Prefixes:** [module,feature,bugfix,task,release]<br>
+**Allowed Prefixes:** [feature,fix,task,refactor,refactor]<br>
 
 **Examples:**
 
-* module/user-orders-module-implementation
+* feature/user-orders-module-implementation
 * task/update-opam-dependencies
-* feature/new-user-account-verification-email
-* bugfix/search-returning-incorrect-matching-results-from-cache
+* refactor/new-user-account-verification-email
+* fix/search-returning-incorrect-matching-results-from-cache
 
-### Pull Requests
+#### After making at least one one commit, you can push it your branch upstream. Github will recognize correctly formatted branch names and generate a pull request draft with a template filled out for you. It is recommended to check in as soon as you have some commits to track your work.
 
-Pull requests should comply with the following naming convention:
+## Pull Requests
 
-**Regex:** `(ISSUE REF #)-[0-9]{1,5}: <description>`<br> or branch name, when no issue is associated.
+Pull request names must comply with the [convential commit](https://www.conventionalcommits.org/en/v1.0.0/) standards, as the rest of your PR makes up the commit into ```main```.
 
 **Merging Strategy:**
 
-Devloper Branches => dev(Beta) -> staging(Stage) -> master(Prod)
+Devloper Branches => main(Staging) -> master(Production)
 
 * Feature branches get squash merged into Dev
 * Stage gets a standard a merge commit into and master
 
-**Examples:**
+**Automated Checks:**
 
-* 3: My new feature
-* 15: Bugfix for bad config
-* Module/User Orders Module Implemenation
+Github actions run automated checks on PRs to make sure they're good to go. Review request actions triggered when you transition a draft PR to open, and once a PR is approved CI/CD actions will run for the final step.
 
-#### Template Sections
+* Branch Names
+* PR Name
+* CI/CD: Unit/Integration Tests, Linting, and a Coverage Report in the comments
+* CODEOWNER approval
+
+### Template Sections
 
 **Describe Your Changes:**
 
-An overview should be provided at a high feature level.
+First part of your PR, an overview should be provided at a high feature level. Possibly including a summary of the issue/story/bug being worked on.
+##### Good to include include the issue # as well.
 
-**Changelog:**
+**Current behavior:**
 
-The changelog should include any technical changes made as a result of the feature being reviewed. A full technical explanation is not required. However, the changes should be lined out in enough detail that the it can be identified and referred to in the future.
+In this section we want to capture important details about the applications current behaviour, mostly relevant when dealing with fixes, refactors, or targeted feature enhancements.
 
-**Github Issue Tickets(s):**
+**New behavior:**
 
-A list of both the Github issue # directly related to the request as well as any relevant issues should be included to provide context around what functionality is being added, changed, or affected.
+Go over the new behaviour this PR introduces, good place to highlight any relevant technical details to be reviewd.
 
-**Related Pull Requests:**
+**Testing:**
 
-This section will detail any dependent pull requests or pull requests that might otherwise be affected once the requested branch is merged.
+Unit? Integration? E2E? Sanity checks? Testing that needs to be done after deployment?
 
-**Note:** PRs can be referenced using Github Links by starting with a `#`
+**Breaking PR:** 
 
-**Screenshots:**
+Is this going to break something somewhere? Are you sure? Do we mean to do it? Check again!
 
-This section should include any relevant screenshots or GIF’s that will help communicate changes to the UI
+**Checklist:** 
 
-### One Commit Per Week
+Crossing our i's and dotting our t's.
 
-Team members should commit AND push their work a minimum of once week before standup(the more the better). Incomplete, barely readable, and utterly nonsensical code does not have immunity from this requirement. We are not here to judge your code, we are here to get things done. It is important to get our work off of our machines as often as possible. Frequent commits also helps keep everyone up to date on our current works in progress. It's better to see a half-built car on the line than no car at all.
+## One Commit Per Day / One PR per week (or 2)
+
+* Team members should attempt to commit their code once per day (or each day they write code). Incomplete, barely readable, and utterly nonsensical code does not have immunity from this requirement. We are not here to judge your code, we are here to get things done. It is important to get our work off of our machines as often as possible. Frequent commits also helps keep everyone up to date on our current works in progress. It's better to see a half-built car on the line than no car at all.
+
+* And ideally team members should aim to submit a PR every 1-2 weeks. This is less about feature/development velocity and more about maintaing an [iterative and incremental development](https://en.wikipedia.org/wiki/Iterative_and_incremental_development) process. So meeting this requirement is more about actively breaking down issues into small code changes that are easier to test, review, and verify.
 
 ## Communication Guidelines
 
 * Sound the alarms and comment in Github as soon as you run into a blocker
 * Communicate early, communicate often
 
-
-
-*We can only see a short distance ahead, but we can see plenty there that needs to be done. - Alan Turing*
+***
+##### *We can only see a short distance ahead, but we can see plenty there that needs to be done. - Alan Turing*
